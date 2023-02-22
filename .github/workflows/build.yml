@@ -1,0 +1,30 @@
+name: Belt Test Build
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Run build
+      shell: cmd
+      run: ./build.cmd
+
+    - name: Save Community Package
+      uses: actions/upload-artifact@v3
+      with:
+        name: community
+        path: ./BeltTest/CommunityPackage/bin/**
+
+    - name: Save Enterprise Package
+      uses: actions/upload-artifact@v3
+      with:
+        name: enterprise
+        path: ./BeltTest/EnterprisePackage/bin/**

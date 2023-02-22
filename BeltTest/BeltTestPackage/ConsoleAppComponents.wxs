@@ -1,0 +1,11 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="ConsoleAppComponents" Directory="INSTALLFOLDER">
+      <Component>
+        <File Source="ConsoleApp1.exe" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Edition" Value="Standard" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="valued" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
