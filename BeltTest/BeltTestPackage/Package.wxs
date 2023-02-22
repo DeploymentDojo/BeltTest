@@ -1,0 +1,9 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="~Dojo Belt Test" Manufacturer="Deployment Dojo" Version="1.0.0.0" UpgradeCode="35dd0c31-a9da-4204-9dba-fba0812cb1a6">
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+    <Feature Id="Main">
+      <ComponentGroupRef Id="ConsoleAppComponents" />
+    </Feature>
+  </Package>
+</Wix>
