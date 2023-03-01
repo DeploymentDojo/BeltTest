@@ -12,8 +12,6 @@ namespace ConsoleApp1
 
             Console.WriteLine("Welcome to the {0} ConsoleApp1.", edition);
             Console.WriteLine("  Registered to our {0} customer.", customer);
-
-            Console.ReadKey();
         }
     }
 }
