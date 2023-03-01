@@ -1,6 +1,9 @@
 name: Belt Test Build
 
 on:
+  pull_request:
+    branches:
+    - main
   push:
     branches:
     - main
@@ -17,14 +20,8 @@ jobs:
       shell: cmd
       run: ./build.cmd
 
-    - name: Save Community Package
+    - name: Save Package
       uses: actions/upload-artifact@v3
       with:
-        name: community
-        path: ./BeltTest/CommunityPackage/bin/**
-
-    - name: Save Enterprise Package
-      uses: actions/upload-artifact@v3
-      with:
-        name: enterprise
-        path: ./BeltTest/EnterprisePackage/bin/**
+        name: artifacts
+        path: ./BeltTest/BeltTestPackage/bin/**
