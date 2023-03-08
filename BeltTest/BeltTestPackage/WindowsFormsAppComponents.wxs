@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="WindowsFormsAppComponents" Directory="INSTALLFOLDER">
+      <Component>
+        <File Source="WindowsFormsApp1.exe" />
+        <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="ProgramMenuFolder" Advertise="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
