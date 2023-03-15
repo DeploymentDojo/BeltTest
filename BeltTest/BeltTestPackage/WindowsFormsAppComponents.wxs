@@ -4,8 +4,11 @@
     <ComponentGroup Id="WindowsFormsAppComponents" Directory="INSTALLFOLDER">
       <Component>
         <File Source="WindowsFormsApp1.exe" />
-        <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="ProgramMenuFolder" Advertise="yes" />
+        <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="ProgramMenuFolder" Advertise="yes" 
+                  Icon="fg.exe" />
       </Component>
     </ComponentGroup>
+
+    <Icon Id="fg.exe" SourceFile="fg.ico" />
   </Fragment>
 </Wix>

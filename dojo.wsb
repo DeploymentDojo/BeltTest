@@ -1,7 +1,7 @@
 <Configuration>
   <MappedFolders>
     <MappedFolder>
-      <HostFolder>D:\dojo\ep22</HostFolder>
+      <HostFolder>D:\dojo\src</HostFolder>
       <SandboxFolder>C:\dojo</SandboxFolder>
     </MappedFolder>
   </MappedFolders>
