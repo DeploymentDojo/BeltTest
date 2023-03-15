@@ -17,8 +17,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            //this.EditionValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null) as string;
-            //this.CustomerValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", null) as string;
+            this.EditionValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null) as string;
+            this.CustomerValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", null) as string;
         }
     }
 }
