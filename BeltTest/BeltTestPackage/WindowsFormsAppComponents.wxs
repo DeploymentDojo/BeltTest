@@ -3,9 +3,16 @@
   <Fragment>
     <ComponentGroup Id="WindowsFormsAppComponents" Directory="INSTALLFOLDER">
       <Component>
-        <File Source="WindowsFormsApp1.exe" />
+        <File Id="WindowsFormsApp1" Source="WindowsFormsApp1.exe" />
         <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="ProgramMenuFolder" Advertise="yes" 
                   Icon="fg.exe" />
+      </Component>
+
+      <Component Directory="DesktopFolder" Condition="ENABLEDESKTOPSHORTCUT">
+        <RegistryValue Root="HKCU" Key="SOFTWARE\BeltTest" Name="DesktopShortcutEnabled" Value="1" />
+
+        <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="DesktopFolder"
+                  Target="[#WindowsFormsApp1]" Icon="fg.exe" />
       </Component>
     </ComponentGroup>
 

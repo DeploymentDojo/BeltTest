@@ -2,6 +2,7 @@
   <PropertyGroup>
     <BuildVersion>0</BuildVersion>
     <DefineConstants>Version=$(BuildVersion)</DefineConstants>
+    <SuppressIces>ICE69</SuppressIces>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="fg.ico" />
