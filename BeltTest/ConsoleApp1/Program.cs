@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Threading;
 using Microsoft.Win32;
 
 namespace ConsoleApp1
@@ -12,6 +14,47 @@ namespace ConsoleApp1
 
             Console.WriteLine("Welcome to the {0} ConsoleApp1.", edition);
             Console.WriteLine("  Registered to our {0} customer.", customer);
+            Console.WriteLine();
+
+            var path = GetCountFilePath();
+            var oldText = String.Empty;
+
+            while (!Console.KeyAvailable)
+            {
+                string text;
+
+                try
+                {
+                    text = File.ReadAllText(path);
+                }
+                catch (Exception e)
+                {
+                    text = e.Message;
+                }
+
+                if (text != oldText)
+                {
+                    Console.WriteLine(text);
+                    oldText = text;
+                }
+
+                Thread.Sleep(1000);
+            }
+        }
+
+        private static string GetCountFilePath()
+        {
+            try
+            {
+                var path = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "CountFilePath", null) as string;
+
+                return Path.GetFullPath(path);
+            }
+            catch
+            {
+            }
+
+            return Path.Combine(AppContext.BaseDirectory, "WindowsService1.txt");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="WixToolset.Sdk/4.0.0-rc.3">
+﻿<Project Sdk="WixToolset.Sdk/4.0.0-rc.4">
   <PropertyGroup>
     <BuildVersion>0</BuildVersion>
     <DefineConstants>Version=$(BuildVersion)</DefineConstants>
@@ -10,5 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
+    <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" />
   </ItemGroup>
 </Project>
