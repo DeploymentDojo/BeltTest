@@ -7,6 +7,8 @@
                         Description="This is the description of the Deployment Dojo Counting Service"
                         Type="ownProcess" Start="auto" ErrorControl="normal" />
         <ServiceControl Name="DeploymentDojoCounting" Remove="uninstall" Start="install" Stop="both" />
+
+        <RemoveFile Name="WindowsService1.txt" On="both" />
       </Component>
     </ComponentGroup>
   </Fragment>
