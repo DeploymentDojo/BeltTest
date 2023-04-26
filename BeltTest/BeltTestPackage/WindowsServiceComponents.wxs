@@ -8,8 +8,15 @@
                         Type="ownProcess" Start="auto" ErrorControl="normal"
                         Account="NT AUTHORITY\LocalService" />
         <ServiceControl Name="DeploymentDojoCounting" Remove="uninstall" Start="install" Stop="both" />
+      </Component>
 
-        <RemoveFile Name="WindowsService1.txt" On="both" />
+      <!-- This component is responsible for configuring the CountFilePath for the service,
+           setting the permissions on the data folder and cleaning up the created text file.
+      -->
+      <Component Directory="DataFolder">
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFilePath" Value="[DataFolder]data.txt" />
+
+        <RemoveFile Name="data.txt" On="both" />
 
         <CreateFolder>
           <PermissionEx Sddl="D:PAI(A;OICI;FA;;;LS)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;AU)" />
