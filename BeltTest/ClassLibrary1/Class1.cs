@@ -15,24 +15,40 @@ namespace ClassLibrary1
                 return _path;
             }
 
-            var path = String.Empty;
+            var folder = String.Empty;
+            var filename = String.Empty;
 
             try
             {
-                path = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "CountFilePath", null) as string;
+                folder = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "CountFileFolder", null) as string;
             }
             catch
             {
             }
 
-            if (String.IsNullOrEmpty(path))
+            try
             {
-                path = Path.Combine(AppContext.BaseDirectory, "WindowsService1.txt");
+                filename = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "CountFileFilename", null) as string;
+            }
+            catch
+            {
             }
 
-            _path = Path.GetFullPath(path);
+            if (String.IsNullOrEmpty(folder))
+            {
+                folder = AppContext.BaseDirectory;
+            }
 
-            Directory.CreateDirectory(Path.GetDirectoryName(_path));
+            if (String.IsNullOrEmpty(filename))
+            {
+                filename = "WindowsService1.txt";
+            }
+
+            folder = Path.GetFullPath(folder);
+
+            Directory.CreateDirectory(folder);
+
+            _path = Path.Combine(folder, filename);
 
             return _path;
         }

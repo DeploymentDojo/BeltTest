@@ -5,6 +5,7 @@
     <Property Id="ARPPRODUCTICON" Value="fg.exe" />
 
     <Feature Id="Main">
+      <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
