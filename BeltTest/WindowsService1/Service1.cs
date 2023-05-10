@@ -3,7 +3,7 @@ using System.IO;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading;
-using Microsoft.Win32;
+using ClassLibrary1;
 
 namespace WindowsService1
 {
@@ -23,7 +23,7 @@ namespace WindowsService1
 
         protected override void OnStart(string[] args)
         {
-            InitializePath();
+            _path = Class1.GetCountFilePath();
 
             UpdateFile($"Start count: {_count}");
 
@@ -40,26 +40,6 @@ namespace WindowsService1
         private void OnTimer(object sender, System.Timers.ElapsedEventArgs e)
         {
             UpdateFile($"Running count: {++_count:000}");
-        }
-
-        private void InitializePath()
-        {
-            try
-            {
-                var path = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "CountFilePath", null) as string;
-
-                _path = Path.GetFullPath(path);
-            }
-            catch
-            {
-            }
-
-            if (String.IsNullOrEmpty(_path))
-            {
-                _path = Path.Combine(AppContext.BaseDirectory, "WindowsService1.txt");
-            }
-
-            Directory.CreateDirectory(Path.GetDirectoryName(_path));
         }
 
         private void UpdateFile(string text)
