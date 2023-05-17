@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
+    <Property Id="REMEMBERDATAFOLDER">
+      <RegistrySearch Id="SearchDataFolder" Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFolder"
+                      Type="raw" />
+    </Property>
+    <SetProperty Id="DATAFOLDER" Value="[REMEMBERDATAFOLDER]" After="AppSearch"
+                 Condition="REMEMBERDATAFOLDER" />
+    
     <ComponentGroup Id="ClassLibraryComponents" Directory="INSTALLFOLDER">
       <Component>
         <File Source="ClassLibrary1.dll" />
