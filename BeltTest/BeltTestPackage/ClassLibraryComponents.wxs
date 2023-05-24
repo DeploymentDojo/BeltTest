@@ -7,6 +7,8 @@
     </Property>
     <SetProperty Id="DATAFOLDER" Value="[REMEMBERDATAFOLDER]" After="AppSearch"
                  Condition="REMEMBERDATAFOLDER" />
+
+    <Property Id="CUSTOMER" Value="valued" />
     
     <ComponentGroup Id="ClassLibraryComponents" Directory="INSTALLFOLDER">
       <Component>
@@ -18,7 +20,7 @@
       </Component>
 
       <Component>
-        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="valued" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="[CUSTOMER]" />
       </Component>
       
       <!-- This component is responsible for configuring the CountFileFolder and CountFileFilename
