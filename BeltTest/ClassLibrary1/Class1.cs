@@ -8,6 +8,16 @@ namespace ClassLibrary1
     {
         private static string _path;
 
+        public static string GetEdition()
+        {
+            return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null); ;
+        }
+
+        public static string GetCustomer()
+        {
+            return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", null);
+        }
+
         public static string GetCountFilePath()
         {
             if (!String.IsNullOrEmpty(_path))

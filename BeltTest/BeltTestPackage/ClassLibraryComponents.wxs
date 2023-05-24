@@ -7,12 +7,22 @@
     </Property>
     <SetProperty Id="DATAFOLDER" Value="[REMEMBERDATAFOLDER]" After="AppSearch"
                  Condition="REMEMBERDATAFOLDER" />
+
+    <Property Id="CUSTOMER" Value="valued" />
     
     <ComponentGroup Id="ClassLibraryComponents" Directory="INSTALLFOLDER">
       <Component>
         <File Source="ClassLibrary1.dll" />
       </Component>
 
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Edition" Value="Standard" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="[CUSTOMER]" />
+      </Component>
+      
       <!-- This component is responsible for configuring the CountFileFolder and CountFileFilename
            for the service, setting the permissions on the data folder and cleaning up the created
            text file.
