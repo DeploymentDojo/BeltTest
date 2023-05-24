@@ -13,6 +13,14 @@
         <File Source="ClassLibrary1.dll" />
       </Component>
 
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Edition" Value="Standard" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="valued" />
+      </Component>
+      
       <!-- This component is responsible for configuring the CountFileFolder and CountFileFilename
            for the service, setting the permissions on the data folder and cleaning up the created
            text file.
