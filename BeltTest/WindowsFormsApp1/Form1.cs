@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using ClassLibrary1;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,8 +18,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            this.EditionValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null) as string;
-            this.CustomerValue.Text = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", null) as string;
+            this.EditionValue.Text = Class1.GetEdition();
+            this.CustomerValue.Text = Class1.GetCustomer();
         }
     }
 }
