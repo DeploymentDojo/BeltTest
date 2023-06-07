@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
-
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.EditionValue = new System.Windows.Forms.Label();
-            this.CustomerValue = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.CustomerValue = new System.Windows.Forms.TextBox();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,16 +66,6 @@
             this.EditionValue.TabIndex = 2;
             this.EditionValue.Text = "                                                                            ";
             // 
-            // CustomerValue
-            // 
-            this.CustomerValue.AutoSize = true;
-            this.CustomerValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerValue.Location = new System.Drawing.Point(143, 151);
-            this.CustomerValue.Name = "CustomerValue";
-            this.CustomerValue.Size = new System.Drawing.Size(397, 30);
-            this.CustomerValue.TabIndex = 4;
-            this.CustomerValue.Text = "                                                                ";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -90,11 +76,32 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Customer:";
             // 
+            // CustomerValue
+            // 
+            this.CustomerValue.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.CustomerValue.Location = new System.Drawing.Point(144, 148);
+            this.CustomerValue.Name = "CustomerValue";
+            this.CustomerValue.Size = new System.Drawing.Size(282, 35);
+            this.CustomerValue.TabIndex = 4;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.SaveButton.Location = new System.Drawing.Point(452, 148);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(88, 36);
+            this.SaveButton.TabIndex = 5;
+            this.SaveButton.Text = "&Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CustomerValue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.EditionValue);
@@ -112,8 +119,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label EditionValue;
-        private System.Windows.Forms.Label CustomerValue;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox CustomerValue;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
 

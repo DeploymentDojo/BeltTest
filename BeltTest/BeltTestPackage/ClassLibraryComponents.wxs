@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
+    <!-- Remember when DATAFOLDER is customized -->
     <Property Id="REMEMBERDATAFOLDER">
       <RegistrySearch Id="SearchDataFolder" Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFolder"
                       Type="raw" />
@@ -8,6 +9,14 @@
     <SetProperty Id="DATAFOLDER" Value="[REMEMBERDATAFOLDER]" After="AppSearch"
                  Condition="REMEMBERDATAFOLDER" />
 
+    <!-- Remember CUSTOMER customizations -->    
+    <Property Id="REMEMBERCUSTOMER">
+      <RegistrySearch Id="SearchCustomer" Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer"
+                      Type="raw" />
+    </Property>
+    <SetProperty Id="CUSTOMER" Value="[REMEMBERCUSTOMER]" After="AppSearch"
+                 Condition="REMEMBERCUSTOMER" />
+    
     <Property Id="CUSTOMER" Value="valued" />
     
     <ComponentGroup Id="ClassLibraryComponents" Directory="INSTALLFOLDER">
