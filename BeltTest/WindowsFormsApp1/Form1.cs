@@ -16,6 +16,9 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private const string BoundsRegistryKey = @"HKEY_CURRENT_USER\SOFTWARE\BeltTest";
+        private const string BoundsRegistryName = "Form1Location";
+
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +26,36 @@ namespace WindowsFormsApp1
 
             this.EditionValue.Text = Class1.GetEdition();
             this.CustomerValue.Text = Class1.GetCustomer();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            var value = (string)Registry.GetValue(BoundsRegistryKey, BoundsRegistryName, null);
+            var split = value?.Split(',');
+
+            if (split?.Length == 5)
+            {
+                var numbers = split.Select(Int32.Parse).ToArray();
+
+                this.DesktopBounds = new Rectangle(numbers[1], numbers[2], numbers[3], numbers[4]);
+                this.WindowState = (FormWindowState)numbers[0];
+            }
+
+            base.OnLoad(e);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            var bounds = this.WindowState == FormWindowState.Normal ? 
+                this.DesktopBounds : 
+                this.RestoreBounds;
+
+            var value = String.Join(",", (int)this.WindowState, bounds.X, 
+                bounds.Y, bounds.Width, bounds.Height);
+
+            Registry.SetValue(BoundsRegistryKey, BoundsRegistryName, value, RegistryValueKind.String);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
