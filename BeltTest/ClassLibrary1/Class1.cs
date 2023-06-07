@@ -18,6 +18,11 @@ namespace ClassLibrary1
             return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", null);
         }
 
+        public static void SetCustomer(string customer)
+        {
+            Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Customer", customer, RegistryValueKind.String);
+        }
+
         public static string GetCountFilePath()
         {
             if (!String.IsNullOrEmpty(_path))
