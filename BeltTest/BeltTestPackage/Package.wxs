@@ -1,4 +1,5 @@
-﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
   <Package Name="Belt Test" Manufacturer="Deployment Dojo" Version="$(Version)" UpgradeCode="35dd0c31-a9da-4204-9dba-fba0812cb1a6">
     <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
     
@@ -10,5 +11,7 @@
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
     </Feature>
+
+    <ui:WixUI Id="WixUI_Minimal" />
   </Package>
 </Wix>

@@ -8,6 +8,9 @@
     <Content Include="fg.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
     <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
