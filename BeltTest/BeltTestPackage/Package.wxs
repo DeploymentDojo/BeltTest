@@ -4,6 +4,10 @@
     <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
     
     <Property Id="ARPPRODUCTICON" Value="fg.exe" />
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED" />
+    
+    <Launch Message="You must install .NET Framework 4.7.2 or newer"
+            Condition="Installed OR WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED"/>
 
     <Feature Id="Main">
       <ComponentGroupRef Id="ClassLibraryComponents" />

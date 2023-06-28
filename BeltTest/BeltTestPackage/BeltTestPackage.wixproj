@@ -8,6 +8,7 @@
     <Content Include="fg.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.1" />
     <PackageReference Include="WixToolset.UI.wixext" Version="4.0.1" />
   </ItemGroup>
   <ItemGroup>
