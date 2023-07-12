@@ -21,6 +21,8 @@
                  Sequence="first"
                  />
 
+    <Property Id="CUSTOMER" Secure="yes" />
+
     <SetProperty Action="AssignCustomerFromCommandLine" Id="CUSTOMER"
                  Value="[CustomerFromCommandLine]" After="AppSearch"
                  Condition="CustomerFromCommandLine"
