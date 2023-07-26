@@ -5,17 +5,21 @@
     
     <Property Id="ARPPRODUCTICON" Value="fg.exe" />
     <PropertyRef Id="WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED" />
-    
+
     <Launch Message="You must install .NET Framework 4.7.2 or newer"
             Condition="Installed OR WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED"/>
 
+    <FeatureRef Id="Main" />
+
+    <ui:WixUI Id="WixUI_Minimal" />
+  </Package>
+
+  <Fragment>
     <Feature Id="Main">
       <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
     </Feature>
-
-    <ui:WixUI Id="WixUI_Minimal" />
-  </Package>
+  </Fragment>
 </Wix>
