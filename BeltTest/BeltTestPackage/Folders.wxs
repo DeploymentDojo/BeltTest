@@ -2,8 +2,13 @@
   <Fragment>
     <StandardDirectory Id="ProgramFiles6432Folder">
       <Directory Id="INSTALLFOLDER" Name="!(bind.Property.Manufacturer) !(bind.Property.ProductName)">
-        <Directory Id="DATAFOLDER" Name="data" />
       </Directory>
     </StandardDirectory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Directory Id="DATAFOLDER" Name="data" />
+    </DirectoryRef>
   </Fragment>
 </Wix>
