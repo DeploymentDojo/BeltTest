@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <PropertyRef Id="REMEMBERDATAFOLDER" />
+    <PropertyRef Id="REMEMBERCUSTOMER" />
+    
+    <ComponentGroup Id="ClassLibraryComponents" Directory="INSTALLFOLDER">
+      <Component>
+        <File Source="ClassLibrary1.dll" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Edition" Value="Standard" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="[CUSTOMER]" />
+      </Component>
+
+      <!-- This component is responsible for configuring the CountFileFolder and CountFileFilename
+           for the service, setting the permissions on the data folder and cleaning up the created
+           text file.
+      -->
+      <Component Directory="DATAFOLDER">
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFolder" Value="[DATAFOLDER]" />
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFilename" Value="data.txt" />
+
+        <RemoveFile Name="data.txt" On="both" />
+
+        <CreateFolder>
+          <PermissionEx Sddl="D:PAI(A;OICI;FA;;;LS)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;AU)" />
+        </CreateFolder>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
