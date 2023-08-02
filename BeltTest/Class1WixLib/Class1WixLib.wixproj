@@ -1,0 +1,9 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.0">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <BindFiles>true</BindFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+  </ItemGroup>
+</Project>

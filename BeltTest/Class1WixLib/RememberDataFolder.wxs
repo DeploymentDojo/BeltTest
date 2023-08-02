@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <!-- Remember when DATAFOLDER is customized -->
+    <Property Id="library REMEMBERDATAFOLDER">
+      <RegistrySearch Id="SearchDataFolder" Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFolder"
+                      Type="raw" />
+    </Property>
+    <SetProperty Id="DATAFOLDER" Value="[REMEMBERDATAFOLDER]" After="AppSearch"
+                 Condition="NOT DATAFOLDER AND REMEMBERDATAFOLDER" />
+  </Fragment>
+</Wix>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <!-- 
+      Remember CUSTOMER customizations with full support for changing the property both 
+      during install and upgrade.
+    -->
+    <Property Id="library REMEMBERCUSTOMER">
+      <RegistrySearch Id="SearchCustomer" Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer"
+                      Type="raw" />
+    </Property>
+    <SetProperty Id="CustomerFromCommandLine" Value="[CUSTOMER]" Before="AppSearch"
+                 Sequence="first"
+                 />
+
+    <Property Id="library CUSTOMER" Secure="yes" />
+
+    <SetProperty Action="AssignCustomerFromCommandLine" Id="CUSTOMER"
+                 Value="[CustomerFromCommandLine]" After="AppSearch"
+                 Condition="CustomerFromCommandLine"
+                 Sequence="first"
+                 />
+    <SetProperty Action="AssignCustomerFromRegistry"
+                 Id="CUSTOMER" Value="[REMEMBERCUSTOMER]" After="AppSearch"
+                 Condition="NOT CustomerFromCommandLine AND REMEMBERCUSTOMER"
+                 Sequence="first"
+                 />
+    <SetProperty Action="AssignCustomerDefault"
+                 Id="CUSTOMER" Value="valued" After="AppSearch"
+                 Condition="NOT CustomerFromCommandLine AND NOT REMEMBERCUSTOMER"
+                 Sequence="first"
+                 />
+  </Fragment>
+</Wix>
