@@ -20,6 +20,13 @@
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
+      <ComponentRef Id="LegalStuff" />
     </Feature>
+  </Fragment>
+
+  <Fragment>
+    <Component Id="LegalStuff" Directory="INSTALLFOLDER" Subdirectory="legal">
+      <File Source="..\legal\SPONSORS.txt" />
+    </Component>
   </Fragment>
 </Wix>
