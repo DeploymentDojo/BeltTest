@@ -26,7 +26,7 @@
 
   <Fragment>
     <Component Id="LegalStuff" Directory="INSTALLFOLDER" Subdirectory="legal">
-      <File Source="..\legal\SPONSORS.txt" />
+      <File Source="SPONSORS.txt" />
     </Component>
   </Fragment>
 </Wix>
