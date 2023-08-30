@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="NativeDllComponents">
+      <Component Directory="INSTALLFOLDER">
+        <File Source="!(bindpath.NativeDll1.x64)\NativeDll1.dll" />
+      </Component>
+
+      <Component Directory="Install32Folder" Bitness="always32">
+        <File Source="!(bindpath.NativeDll1.Win32)\NativeDll1.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
