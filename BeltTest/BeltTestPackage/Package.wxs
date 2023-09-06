@@ -24,7 +24,7 @@
       <ComponentRef Id="LegalStuff" />
     </Feature>
   </Fragment>
-
+  
   <Fragment>
     <Component Id="LegalStuff" Directory="INSTALLFOLDER" Subdirectory="legal">
       <File Source="SPONSORS.txt" />
