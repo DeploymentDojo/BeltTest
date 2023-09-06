@@ -16,19 +16,13 @@
 
   <Fragment>
     <Feature Id="Main">
-      <MergeRef Id="Msm1" />
+      <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
       <ComponentGroupRef Id="NativeDllComponents" />
       <ComponentRef Id="LegalStuff" />
     </Feature>
-  </Fragment>
-
-  <Fragment>
-    <DirectoryRef Id="INSTALLFOLDER">
-      <Merge Id="Msm1" Language="1033" SourceFile="MergeModule1.msm" />
-    </DirectoryRef>
   </Fragment>
   
   <Fragment>

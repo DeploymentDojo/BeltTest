@@ -1,8 +1,0 @@
-﻿<Project Sdk="WixToolset.Sdk/4.0.0">
-  <PropertyGroup>
-    <OutputType>Module</OutputType>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
-  </ItemGroup>
-</Project>
