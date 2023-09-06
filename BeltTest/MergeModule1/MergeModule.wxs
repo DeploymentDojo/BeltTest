@@ -1,0 +1,32 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Module Id="MergeModule1" Guid="3256020c-938e-46ed-b076-0519eff2a33e" Language="1033" Version="1.0.0.0">
+    <SummaryInformation Manufacturer="Deployment Dojo" />
+
+    <Directory Id="MergeRedirectFolder" ComponentGuidGenerationSeed="f79c5f38-814e-4a68-ad25-e60b9ac0f88f">
+      <Component>
+        <File Source="ClassLibrary1.dll" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Edition" Value="Standard" />
+      </Component>
+
+      <Component>
+        <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="Customer" Value="[CUSTOMER]" />
+      </Component>
+
+      <Directory Id="DATAFOLDER" Name="data">
+        <Component>
+          <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFolder" Value="[DATAFOLDER]" />
+          <RegistryValue Root="HKLM" Key="SOFTWARE\BeltTest" Name="CountFileFilename" Value="data.txt" />
+
+          <RemoveFile Name="data.txt" On="both" />
+
+          <CreateFolder>
+            <PermissionEx Sddl="D:PAI(A;OICI;FA;;;LS)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;AU)" />
+          </CreateFolder>
+        </Component>  
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>

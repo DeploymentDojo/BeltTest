@@ -1,4 +1,4 @@
-<Project Sdk="WixToolset.Sdk/4.0.1">
+﻿<Project Sdk="WixToolset.Sdk/4.0.1">
   <PropertyGroup>
     <BuildVersion>0</BuildVersion>
     <DefineConstants>Version=$(BuildVersion)</DefineConstants>
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Class1WixLib\Class1WixLib.wixproj" />
     <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
+    <ProjectReference Include="..\MergeModule1\MergeModule1.wixproj" />
     <ProjectReference Include="..\NativeDll1\NativeDll1.vcxproj" Platforms="Win32;x64" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
     <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" />

@@ -16,7 +16,7 @@
 
   <Fragment>
     <Feature Id="Main">
-      <ComponentGroupRef Id="ClassLibraryComponents" />
+      <MergeRef Id="Msm1" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
@@ -25,6 +25,12 @@
     </Feature>
   </Fragment>
 
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Merge Id="Msm1" Language="1033" SourceFile="MergeModule1.msm" />
+    </DirectoryRef>
+  </Fragment>
+  
   <Fragment>
     <Component Id="LegalStuff" Directory="INSTALLFOLDER" Subdirectory="legal">
       <File Source="SPONSORS.txt" />
