@@ -10,7 +10,7 @@ namespace ClassLibrary1
 
         public static string GetEdition()
         {
-            return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null); ;
+            return (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\BeltTest", "Edition", null);
         }
 
         public static string GetCustomer()
