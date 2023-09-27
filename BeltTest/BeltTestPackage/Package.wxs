@@ -11,17 +11,20 @@
 
     <FeatureRef Id="Main" />
 
-    <ui:WixUI Id="WixUI_Minimal" />
+    <ui:WixUI Id="WixUI_FeatureTree" />
   </Package>
 
   <Fragment>
-    <Feature Id="Main">
+    <Feature Id="Main" Title="Belt Test Program" Description="This is the main part of the Belt Test Program">
       <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
-      <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
       <ComponentGroupRef Id="NativeDllComponents" />
       <ComponentRef Id="LegalStuff" />
+
+      <Feature Id="Admin" Title="Belt Test Admin Functionality" Description="This is the admin functionality for the Belt Test Program">
+        <ComponentGroupRef Id="WindowsFormsAppComponents" />
+      </Feature>
     </Feature>
   </Fragment>
   
