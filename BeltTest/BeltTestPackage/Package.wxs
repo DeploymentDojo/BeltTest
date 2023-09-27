@@ -10,15 +10,16 @@
             Condition="Installed OR WIX_IS_NETFRAMEWORK_472_OR_LATER_INSTALLED"/>
 
     <FeatureRef Id="Main" />
+    <FeatureRef Id="Admin" />
 
-    <ui:WixUI Id="WixUI_Minimal" />
+    <ui:WixUI Id="WixUI_FeatureTree" />
   </Package>
 
   <Fragment>
-    <Feature Id="Main">
+    <Feature Id="Main" Title="Belt Test Program" Description="This is the main part of the Belt Test Program"
+             AllowAbsent="no" AllowAdvertise="no">
       <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
-      <ComponentGroupRef Id="WindowsFormsAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
       <ComponentGroupRef Id="NativeDllComponents" />
       <ComponentRef Id="LegalStuff" />
