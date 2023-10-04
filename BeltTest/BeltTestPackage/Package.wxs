@@ -18,7 +18,6 @@
   <Fragment>
     <Feature Id="Main" Title="Belt Test Program" Description="This is the main part of the Belt Test Program"
              AllowAbsent="no" AllowAdvertise="no">
-      <ComponentGroupRef Id="ClassLibraryComponents" />
       <ComponentGroupRef Id="ConsoleAppComponents" />
       <ComponentGroupRef Id="WindowsServiceComponents" />
       <ComponentGroupRef Id="NativeDllComponents" />

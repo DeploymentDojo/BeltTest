@@ -14,6 +14,8 @@
         <Shortcut Name="Deployment Dojo Windows Forms App 1" Directory="DesktopFolder"
                   Target="[#WindowsFormsApp1]" Icon="fg.exe" />
       </Component>
+
+      <ComponentGroupRef Id="ClassLibraryComponents" />
     </ComponentGroup>
 
     <Icon Id="fg.exe" SourceFile="fg.ico" />

@@ -9,6 +9,8 @@
                         Account="NT AUTHORITY\LocalService" />
         <ServiceControl Name="DeploymentDojoCounting" Remove="uninstall" Start="install" Stop="both" />
       </Component>
+
+      <ComponentGroupRef Id="ClassLibraryComponents" />
     </ComponentGroup>
   </Fragment>
 </Wix>
