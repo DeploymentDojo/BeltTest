@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WixToolset.Heat" Version="4.0.2" />
+    <PackageReference Include="FireGiant.HeatWave.BuildTools.wixext" Version="4.0.1" />
     <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.2" />
     <PackageReference Include="WixToolset.UI.wixext" Version="4.0.2" />
   </ItemGroup>
@@ -25,13 +25,5 @@
     <ProjectReference Include="..\NativeDll1\NativeDll1.vcxproj" Platforms="Win32;x64" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
     <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" Publish="true" />
-
-    <HarvestDirectory Include="$(IntermediateOutputPath)publish\WindowsService1">
-      <ComponentGroupName>WindowsServiceSupportComponents</ComponentGroupName>
-      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
-      <SuppressRootDirectory>true</SuppressRootDirectory>
-      <SuppressRegistry>true</SuppressRegistry>
-      <Transforms>filter.xsl</Transforms>
-    </HarvestDirectory>
   </ItemGroup>
 </Project>

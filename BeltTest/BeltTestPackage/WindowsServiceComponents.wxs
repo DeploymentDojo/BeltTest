@@ -1,4 +1,5 @@
-<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:hbt="http://www.firegiant.com/schemas/v4/wxs/heatwave/buildtools">
   <Fragment>
     <ComponentGroup Id="WindowsServiceComponents" Directory="INSTALLFOLDER">
       <Component>
@@ -10,7 +11,14 @@
         <ServiceControl Name="DeploymentDojoCounting" Remove="uninstall" Start="install" Stop="both" />
       </Component>
 
-      <ComponentGroupRef Id="WindowsServiceSupportComponents" />
+      <Component>
+        <hbt:HarvestFolder Source="!(bindpath.WindowsService1)" >
+          <hbt:Exclude Files="*.exe" />
+          <hbt:Exclude Files="*.pdb" />
+          <hbt:Exclude Files="ClassLibrary1.dll" />
+        </hbt:HarvestFolder>
+      </Component>
+
       <ComponentGroupRef Id="ClassLibraryComponents" />
     </ComponentGroup>
   </Fragment>
