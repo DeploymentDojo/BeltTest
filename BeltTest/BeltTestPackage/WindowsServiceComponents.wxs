@@ -3,7 +3,7 @@
   <Fragment>
     <ComponentGroup Id="WindowsServiceComponents" Directory="INSTALLFOLDER">
       <Component>
-        <File Source="WindowsService1.exe" />
+        <hbt:HarvestFile Source="WindowsService1.exe" />
         <ServiceInstall Name="DeploymentDojoCounting" DisplayName="~Deployment Dojo Counting Service"
                         Description="This is the description of the Deployment Dojo Counting Service"
                         Type="ownProcess" Start="auto" ErrorControl="normal"
@@ -13,7 +13,6 @@
 
       <Component>
         <hbt:HarvestFolder Source="!(bindpath.WindowsService1)" >
-          <hbt:Exclude Files="*.exe" />
           <hbt:Exclude Files="*.pdb" />
           <hbt:Exclude Files="ClassLibrary1.dll" />
         </hbt:HarvestFolder>
