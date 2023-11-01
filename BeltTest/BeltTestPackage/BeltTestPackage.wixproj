@@ -1,4 +1,4 @@
-﻿<Project Sdk="WixToolset.Sdk/4.0.1">
+﻿<Project Sdk="WixToolset.Sdk/4.0.2">
   <PropertyGroup>
     <BuildVersion>0</BuildVersion>
     <DefineConstants>Version=$(BuildVersion)</DefineConstants>
@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WixToolset.Heat" Version="4.0.1" />
-    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.1" />
-    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.1" />
+    <PackageReference Include="WixToolset.Heat" Version="4.0.2" />
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.2" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
