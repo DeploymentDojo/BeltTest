@@ -1,4 +1,4 @@
-﻿<Project Sdk="WixToolset.Sdk/4.0.1">
+﻿<Project Sdk="WixToolset.Sdk/4.0.2">
   <PropertyGroup>
     <BuildVersion>0</BuildVersion>
     <DefineConstants>Version=$(BuildVersion)</DefineConstants>
@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WixToolset.Heat" Version="4.0.1" />
-    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.1" />
-    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.1" />
+    <PackageReference Include="FireGiant.HeatWave.BuildTools.wixext" Version="4.0.1" />
+    <PackageReference Include="WixToolset.Netfx.wixext" Version="4.0.2" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,14 +24,7 @@
     <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
     <ProjectReference Include="..\NativeDll1\NativeDll1.vcxproj" Platforms="Win32;x64" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
-    <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" Publish="true" />
-
-    <HarvestDirectory Include="$(IntermediateOutputPath)publish\WindowsService1">
-      <ComponentGroupName>WindowsServiceSupportComponents</ComponentGroupName>
-      <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
-      <SuppressRootDirectory>true</SuppressRootDirectory>
-      <SuppressRegistry>true</SuppressRegistry>
-      <Transforms>filter.xsl</Transforms>
-    </HarvestDirectory>
+    <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" Publish="true" 
+                      HarvestOutputGroup="PublishItemsOutputGroup" />
   </ItemGroup>
 </Project>
