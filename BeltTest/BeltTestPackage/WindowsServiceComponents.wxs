@@ -12,10 +12,10 @@
       </Component>
 
       <Component>
-        <hbt:HarvestFolder Source="!(bindpath.WindowsService1)" >
+        <hbt:HarvestProjectOutput Id="WindowsService1">
           <hbt:Exclude Files="*.pdb" />
           <hbt:Exclude Files="ClassLibrary1.dll" />
-        </hbt:HarvestFolder>
+        </hbt:HarvestProjectOutput>
       </Component>
 
       <ComponentGroupRef Id="ClassLibraryComponents" />

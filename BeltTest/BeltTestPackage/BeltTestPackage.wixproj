@@ -24,6 +24,7 @@
     <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
     <ProjectReference Include="..\NativeDll1\NativeDll1.vcxproj" Platforms="Win32;x64" />
     <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj" />
-    <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" Publish="true" />
+    <ProjectReference Include="..\WindowsService1\WindowsService1.csproj" Publish="true" 
+                      HarvestOutputGroup="PublishItemsOutputGroup" />
   </ItemGroup>
 </Project>
